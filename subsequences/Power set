@@ -1,0 +1,19 @@
+void f(string s,string curr,int i,vector<string>&ans)
+{
+    if(i==s.length())
+    {
+        ans.push_back(curr);
+        return;
+    }
+    f(s,curr+s[i],i+1,ans);
+    f(s,curr,i+1,ans);
+    i++;
+}
+vector<string> generateSubsequences(string s)
+{
+    // Write your code here.
+    vector<string>ans;
+    string curr="";
+    f(s,curr,0,ans);
+    return ans;
+}
