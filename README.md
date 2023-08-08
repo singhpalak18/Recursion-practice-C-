@@ -1,2 +1,2 @@
 # Recursion-practice-C-
-Important recursion questions using the concept of pick and not pick
+Solutions of Striver's A-Z sde sheet recursion questions 
