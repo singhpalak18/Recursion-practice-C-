@@ -1,0 +1,22 @@
+void f(string s, string curr, int i, int size, unordered_set<string>& ans) {
+    if (i == size) {
+        ans.insert(curr);
+        return;
+    }
+    f(s, curr + s[i], i + 1, size, ans);
+    f(s, curr, i + 1, size, ans);
+    i++;
+}
+
+string moreSubsequence(int n, int m, string a, string b) {
+    unordered_set<string> ans1;
+    unordered_set<string> ans2;
+    f(a, "", 0, n, ans1);
+    f(b, "", 0, m, ans2);
+
+    if (ans1.size() >= ans2.size()) {
+        return a;
+    } else {
+        return b;
+    }
+}
