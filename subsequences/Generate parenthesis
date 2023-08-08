@@ -1,0 +1,28 @@
+void generate(int n,string &curr,int open,int close,vector<string>&ans)
+{
+    if(open==n && close==n)
+    {
+        ans.push_back(curr);
+        return;
+    }
+    if(open<n)
+    {
+        curr.push_back('(');
+        generate(n,curr,open+1,close,ans);
+        curr.pop_back();
+    }
+    if(close<open)
+    {
+        curr.push_back(')');
+        generate(n,curr,open,close+1,ans);
+        curr.pop_back();
+    }
+}
+vector<string> validParenthesis(int n){
+    // Write your code here.
+    int open=0,close=0;
+    string curr;
+    vector<string>ans;
+    generate(n,curr,open,close,ans);
+    return ans;
+}
