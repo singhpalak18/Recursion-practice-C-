@@ -1,0 +1,22 @@
+void f(int i,vector<int>&nums ,vector<int>vec, set<vector<int>>&st)
+    {
+        if(i==nums.size())
+        {
+            st.insert(vec);
+            return;
+        }    
+        vec.push_back(nums[i]);
+        f(i+1,nums,vec,st);
+        vec.pop_back();
+        f(i+1,nums,vec,st);
+    }
+    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        vector<vector<int>>ans;
+        vector<int>vec;
+        set<vector<int>>st;
+        sort(nums.begin(),nums.end());
+        f(0,nums,vec,st);
+        for(auto i:st)
+            ans.push_back(i);
+        return ans;    
+    }
