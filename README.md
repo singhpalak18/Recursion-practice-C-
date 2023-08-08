@@ -1,2 +1,2 @@
-# Recursion-practice-C-
-Solutions of Striver's A-Z sde sheet recursion questions 
+# Recursion-practice-C++-
+Important recursion questions 
