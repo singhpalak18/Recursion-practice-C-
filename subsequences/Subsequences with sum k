@@ -1,0 +1,15 @@
+vector<vector<int>> subarraysWithSumK(vector<int> a, long long k) {
+   vector<vector<int>> result;
+
+    for (int start = 0; start < a.size(); start++) {
+        int sum = 0;
+        for (int end = start; end < a.size(); end++) {
+            sum += a[end];
+            if (sum == k) {
+                result.push_back(vector<int>(a.begin() + start, a.begin() + end + 1));
+            }
+        }
+    }
+
+    return result;
+}
