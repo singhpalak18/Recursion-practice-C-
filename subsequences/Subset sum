@@ -1,0 +1,10 @@
+bool isSubset(int i,int sum,vector<int>&a,int k)
+{
+    if(sum==k) return true;
+    if(i>a.size() || sum>k) return false;
+    if(isSubset(i+1,sum+a[i],a,k)) return true;
+    return isSubset(i+1,sum,a,k);
+}
+bool isSubsetPresent(int n, int k, vector<int> &a) {
+    return isSubset(0,0,a,k);
+}
